@@ -98,4 +98,22 @@ public class App {
         tx.commit();
         session.close();
     }
+
+    @Test
+    public void testGet() {
+        Session session = sf.openSession();
+        session.beginTransaction();
+
+        //获取
+        User user = (User) session.get(User.class, 3);
+        System.out.println(user.getUserId());
+        System.out.println(user.getUserName());
+
+        //当查询用户，同事可以获取用户关联的list集合的数据（因为有正确映射）
+        //当时用到集合数据的使用，才像数据库发送执行的sql语句
+        System.out.println(user.getAddressList());
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

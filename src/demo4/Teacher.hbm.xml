@@ -3,7 +3,7 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="demo2" auto-import="true">
+<hibernate-mapping package="demo4" auto-import="true">
 
 	<class name="Teacher" table="t_teacher">
 		<id name="teaId" column="id">
@@ -11,9 +11,10 @@
 		</id>
 		<property name="teaName" column="teaName"></property>
 
-		<set name="course" table="t_course">
-			<key column="tId"></key>
-			<element column="course" type="java.lang.String" length="20"></element>
+
+		<set name="students" table="t_student" inverse="false">
+			<key column="teaId"></key>
+			<one-to-many class="demo4.Student"></one-to-many>
 		</set>
 	</class>
 
