@@ -32,6 +32,6 @@
 		<mapping resource="cn/itcast/a_hecEmployee.hbm.xml.xml"/>
 		-->
 		<!--<mapping resource="deuser.xml.xml"></mapping>-->
-		<mapping resource="demo/User.hbm.xml"></mapping>
+		<!--<mapping resource="demo/User.hbm.xml"></mapping>-->
 	</session-factory>
 </hibernate-configuration>

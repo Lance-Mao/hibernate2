@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="oneToOne" auto-import="true">
+
+	<class table="t_idCard" name="IdCard">
+		<id name="cardNum">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="place" length="20"></property>
+
+		<!--一对一映射   有外键方-->
+		<many-to-one name="user" column="user_id" class="User" cascade="save-update" unique="true"></many-to-one>
+	</class>
+
+</hibernate-mapping>

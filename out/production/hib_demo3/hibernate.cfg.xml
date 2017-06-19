@@ -27,11 +27,11 @@
 		<!--<property name="hibernate.format_sql">true</property>-->
 		<!-- 2.3 自动建表  -->
 		<!--<property name="hibernate.hbm2ddl.auto">create</property> 如果数据库中有表，先删除数据库中的表，再创建-->
-		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
 		<!-- 3. 加载所有映射
 		<mapping resource="cn/itcast/a_hecEmployee.hbm.xml.xml"/>
 		-->
 		<!--<mapping resource="deuser.xml.xml"></mapping>-->
-		<mapping resource="demo/User.hbm.xml"></mapping>
+		<!--<mapping resource="demo/User.hbm.xml"></mapping>-->
 	</session-factory>
 </hibernate-configuration>

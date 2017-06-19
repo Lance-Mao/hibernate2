@@ -18,6 +18,7 @@ public class Test {
                 .buildSessionFactory();
     }
 
+    //级联保存
     @org.junit.Test
     public void test() {
         //保存  一对多，一的一方的操作
@@ -39,9 +40,24 @@ public class Test {
         //保存
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
-        session.save(s1);
-        session.save(s2);
-        session.save(t);
+//        session.save(s1);
+//        session.save(s2);
+        session.save(t);   //设置级联保存
+
+        tx.commit();
+        session.close();
+        sf.close();
+    }
+
+    //级联删除
+    @org.junit.Test
+    public void test2() {
+
+        Session session = sf.openSession();
+        Transaction tx = session.beginTransaction();
+
+        Object o = session.get(Teacher.class, 2);
+        session.delete(o);
 
         tx.commit();
         session.close();

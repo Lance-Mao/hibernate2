@@ -12,7 +12,7 @@
 		<property name="teaName" column="teaName"></property>
 
 
-		<set name="students" table="t_student">
+		<set name="students" table="t_student" inverse="false" cascade="save-update,delete">
 			<key column="teaId"></key>
 			<one-to-many class="demo4.Student"></one-to-many>
 		</set>
